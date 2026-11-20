@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đề cương Ôn thi Triết học Ấn Độ - Câu 2</title>
+    <style>
+        :root {
+            --primary-glow: #7928CA;
+            --secondary-glow: #FF0080;
+            --accent-cyan: #00DFD8;
+            --accent-gold: #FFD700;
+            --text-main: #E2E8F0;
+            --text-heading: #FFFFFF;
+            --glass-bg: rgba(15, 23, 42, 0.65);
+            --glass-border: rgba(255, 255, 255, 0.12);
+            --highlight-box: rgba(0, 223, 216, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            background-color: #030712;
+            color: var(--text-main);
+            line-height: 1.75;
+            overflow-x: hidden;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        /* Cosmic Canvas & Nebulae Background */
+        .stars-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 15% 30%, rgba(121, 40, 202, 0.25) 0%, transparent 45%),
+                radial-gradient(circle at 85% 70%, rgba(255, 0, 128, 0.2) 0%, transparent 45%),
+                radial-gradient(circle at 50% 15%, rgba(0, 223, 216, 0.15) 0%, transparent 50%),
+                #030712;
+        }
+
+        /* Animated Star Particles */
+        .stars-bg::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 30px 40px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 70px 110px, rgba(255,255,255,0.8), rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 120px 50px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 180px 150px, rgba(255,215,0,0.9), rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 260px 220px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 340px 280px, rgba(0,223,216,0.8), rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 400px 350px, #fff, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 400px 400px;
+            opacity: 0.6;
+            animation: twinkle 8s infinite linear;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.4; transform: translateY(0); }
+            50% { opacity: 0.8; }
+            100% { opacity: 0.4; transform: translateY(-20px); }
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 920px;
+            margin: 0 auto;
+        }
+
+        /* Glassmorphism Card */
+        .card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5),
+                        0 0 30px rgba(121, 40, 202, 0.2);
+            margin-bottom: 30px;
+        }
+
+        /* Header Styling */
+        .header {
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 25px;
+            margin-bottom: 30px;
+        }
+
+        .sub-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-cyan);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .main-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FFFFFF 0%, #E2E8F0 50%, var(--accent-cyan) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .badge-official {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--primary-glow), var(--secondary-glow));
+            color: #FFF;
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 4px 16px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .lecturer {
+            font-size: 1rem;
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        /* Question Banner */
+        .question-banner {
+            background: rgba(121, 40, 202, 0.15);
+            border-left: 4px solid var(--secondary-glow);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .question-title {
+            font-size: 1.3rem;
+            color: var(--text-heading);
+            font-weight: 700;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .question-topic {
+            font-style: italic;
+            color: #94A3B8;
+        }
+
+        /* Content Sections */
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-heading {
+            font-size: 1.25rem;
+            color: var(--accent-cyan);
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-heading::before {
+            content: "✦";
+            color: var(--accent-gold);
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #CBD5E1;
+            text-align: justify;
+        }
+
+        /* Bullet List */
+        .bullet-list {
+            list-style: none;
+        }
+
+        .bullet-list > li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 18px;
+            color: #CBD5E1;
+        }
+
+        .bullet-list > li::before {
+            content: "•";
+            position: absolute;
+            left: 10px;
+            top: -2px;
+            color: var(--secondary-glow);
+            font-size: 1.5rem;
+        }
+
+        /* Sub-bullet List */
+        .sub-bullet-list {
+            list-style: none;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding-left: 15px;
+        }
+
+        .sub-bullet-list li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            color: #CBD5E1;
+        }
+
+        .sub-bullet-list li::before {
+            content: "▫";
+            position: absolute;
+            left: 5px;
+            color: var(--accent-cyan);
+            font-size: 1.1rem;
+        }
+
+        .bullet-title {
+            color: var(--text-heading);
+            font-weight: 700;
+        }
+
+        .key-point {
+            display: inline-block;
+            background: rgba(255, 0, 128, 0.2);
+            color: #FF70B8;
+            border: 1px solid rgba(255, 0, 128, 0.4);
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-left: 6px;
+        }
+
+        /* Term Highlight */
+        .term {
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        /* Box highlight for important summary/concepts */
+        .highlight-card {
+            background: var(--highlight-box);
+            border: 1px solid rgba(0, 223, 216, 0.2);
+            border-radius: 12px;
+            padding: 18px 22px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .card {
+                padding: 25px 20px;
+            }
+            .main-title {
+                font-size: 1.6rem;
+            }
+            body {
+                padding: 15px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="stars-bg"></div>
+
+    <div class="container">
+        <div class="card">
+            <!-- Header -->
+            <header class="header">
+                <div class="sub-title">Đề cương ôn thi DN TH Ấn Độ CK4 v4 – tiengthanh 1</div>
+                <h1 class="main-title">DN TRIẾT HỌC ẤN ĐỘ<br>(BHĀRATASYA DARŚANA)</h1>
+                <div class="badge-official">ĐÁP ÁN CHÍNH THỨC 5 CÂU HỎI ÔN THI CUỐI KỲ</div>
+                <div class="lecturer">Giảng viên: TT Thích Giác Điều</div>
+            </header>
+
+            <!-- Question Info -->
+            <div class="question-banner">
+                <div class="question-title">CÂU 2: LỊCH TRÌNH TIẾN HÓA CỦA SĀṀKHYA VÀ QUAN HỆ PRAKṚTI – PURUṢA TRONG TIẾN TRÌNH GIẢI THOÁT</div>
+                <div class="question-topic">Nội dung đề bài: “Trình bày lịch trình tiến hóa của học phái Sāṁkhya và cho biết mối quan hệ giữa Prakṛti và Puruṣa trong tiến trình giải thoát? (hoặc: Trình bày học thuyết Nhị nguyên vô thần của Sāṁkhya)”</div>
+            </div>
+
+            <!-- Section 1 -->
+            <div class="section">
+                <h2 class="section-heading">1. Bản chất hệ thống Nhị nguyên vô thần</h2>
+                <p>
+                    Học phái <span class="term">Sāṁkhya</span> khẳng định vũ trụ hình thành từ hai thực tại tối sơ độc lập: 
+                    <span class="term">Prakṛti</span> (Tự tánh / Vật chất: phi sở tạo nhưng là năng tạo, vô thức, năng động) và 
+                    <span class="term">Puruṣa</span> (Thần ngã / Tinh thần: phi sở tạo, phi năng tạo, hữu thức, bất biến, người chứng kiến). 
+                    Hệ thống hoàn toàn không chấp nhận Đấng sáng tạo (<span class="term">Īśvara</span>).
+                </p>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="section">
+                <h2 class="section-heading">2. Lịch trình tiến hóa 25 Đế (Tattva theo chiều dọc)</h2>
+                <p>
+                    Khi <span class="term">Prakṛti</span> giao thoa cùng <span class="term">Puruṣa</span>, trạng thái cân bằng của Tam đức (<span class="term">Triguṇa: Sattva, Rajas, Tamas</span>) bị phá vỡ, mở ra lịch trình tiến hóa:
+                </p>
+                
+                <ul class="bullet-list">
+                    <li>
+                        Từ <span class="term">Prakṛti</span> sinh ra <span class="bullet-title">Mahat / Buddhi</span> (Trí năng / Đại).
+                    </li>
+                    <li>
+                        Từ <span class="term">Buddhi</span> sinh ra <span class="bullet-title">Ahaṁkāra</span> (Ngã ái). <span class="term">Ahaṁkāra</span> biến dị theo 3 thuộc tính Tam đức:
+                        
+                        <ul class="sub-bullet-list">
+                            <li>
+                                <span class="bullet-title">Sāttvika Ahaṁkāra (Vaikṛta - Thuần chất):</span> Sinh ra <span class="term">Manas</span> (Ý căn) cùng 10 Căn gồm Ngũ tri căn (tai, da, mắt, mũi, lưỡi) và Ngũ tác căn (khẩu, tay, chân, bài tiết, sinh sản).
+                            </li>
+                            <li>
+                                <span class="bullet-title">Tāmasa Ahaṁkāra (Bhūtādi - Ế chất):</span> Sinh ra Ngũ duy (<span class="term">Tanmātra</span>: thanh, xúc, sắc, vị, hương vi tế); từ Ngũ duy ngưng tụ sinh ra Ngũ đại chủng (<span class="term">Mahābhūta</span>: không, phong, hỏa, thủy, địa thô thiển).
+                            </li>
+                            <li>
+                                <span class="bullet-title">Rājasa Ahaṁkāra (Taijasa - Kích chất)</span> <span class="key-point">ĐIỂM THEN CHỐT</span>: Không sinh ra một nhóm Đế riêng biệt (nhằm bảo toàn chính xác cấu trúc 25 Đế của hệ thống). Với bản chất năng động (<span class="term">Cala</span>) và kích thích (<span class="term">Upaṣṭambhaka</span>), <span class="term">Rajas</span> đóng vai trò động lực trung gian, cung cấp năng lượng kích hoạt để Sāttvika và Tāmasa chuyển hóa thành các Đế hiện tượng giới.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="bullet-title">Hệ thống Nội quan (Antaḥkaraṇa):</span> Kết hợp <span class="term">Buddhi + Ahaṁkāra + Manas</span>, vận hành xuyên suốt cả 3 thời.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="section">
+                <h2 class="section-heading">3. Mối quan hệ Prakṛti – Puruṣa trong tiến trình giải thoát</h2>
+                <ul class="bullet-list">
+                    <li>
+                        <span class="bullet-title">Ẩn dụ Người mù và Người què (Kārikā 21):</span> <span class="term">Prakṛti</span> như người mù khỏe chân (vô thức nhưng năng động); <span class="term">Puruṣa</span> như người què tinh mắt (hữu thức nhưng bất động). Hai bên kết hợp cõng nhau để vượt qua khu rừng Tam đức.
+                    </li>
+                    <li>
+                        <span class="bullet-title">Ẩn dụ Vũ công và Khán giả (Kārikā 59, 61):</span> <span class="term">Prakṛti</span> như cô gái nhảy múa phô diễn hiện tượng; <span class="term">Puruṣa</span> là vị khán giả tĩnh lặng ngồi xem. Tiến trình vật chất diễn ra chỉ để phục vụ sự trải nghiệm của <span class="term">Puruṣa</span>.
+                    </li>
+                    <li>
+                        <span class="bullet-title">Trạng thái Độc tồn (Kaivalya):</span> Nhờ Trí năng phân biệt (<span class="term">Viveka-jñāna</span>), <span class="term">Puruṣa</span> thấy rõ mình hoàn toàn biệt lập với vật chất. Bức màn sân khấu khép lại, vũ công ngừng múa.
+                    </li>
+                </ul>
+
+                <div class="highlight-card">
+                    <p style="margin-bottom: 0;">
+                        <span class="bullet-title">Bản chất tối hậu (Kārikā 62):</span> <span class="term">Puruṣa</span> chưa từng bị trói buộc hay giải thoát; chính <span class="term">Prakṛti</span> tự trói buộc và tự giải thoát mình.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

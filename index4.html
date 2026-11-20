@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đề cương Ôn thi Triết học Ấn Độ - Câu 4</title>
+    <style>
+        :root {
+            --primary-glow: #7928CA;
+            --secondary-glow: #FF0080;
+            --accent-cyan: #00DFD8;
+            --accent-gold: #FFD700;
+            --text-main: #E2E8F0;
+            --text-heading: #FFFFFF;
+            --glass-bg: rgba(15, 23, 42, 0.65);
+            --glass-border: rgba(255, 255, 255, 0.12);
+            --highlight-box: rgba(0, 223, 216, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            background-color: #030712;
+            color: var(--text-main);
+            line-height: 1.75;
+            overflow-x: hidden;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        /* Cosmic Canvas & Nebulae Background */
+        .stars-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 20% 35%, rgba(121, 40, 202, 0.25) 0%, transparent 45%),
+                radial-gradient(circle at 80% 65%, rgba(255, 0, 128, 0.2) 0%, transparent 45%),
+                radial-gradient(circle at 50% 80%, rgba(0, 223, 216, 0.15) 0%, transparent 50%),
+                #030712;
+        }
+
+        /* Animated Star Particles */
+        .stars-bg::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 50px 90px, rgba(255,255,255,0.8), rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 130px 60px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 190px 140px, rgba(255,215,0,0.9), rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 270px 200px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 350px 260px, rgba(0,223,216,0.8), rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 410px 330px, #fff, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 400px 400px;
+            opacity: 0.6;
+            animation: twinkle 8s infinite linear;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.4; transform: translateY(0); }
+            50% { opacity: 0.8; }
+            100% { opacity: 0.4; transform: translateY(-20px); }
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 920px;
+            margin: 0 auto;
+        }
+
+        /* Glassmorphism Card */
+        .card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5),
+                        0 0 30px rgba(121, 40, 202, 0.2);
+            margin-bottom: 30px;
+        }
+
+        /* Header Styling */
+        .header {
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 25px;
+            margin-bottom: 30px;
+        }
+
+        .sub-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-cyan);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .main-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FFFFFF 0%, #E2E8F0 50%, var(--accent-cyan) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .badge-official {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--primary-glow), var(--secondary-glow));
+            color: #FFF;
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 4px 16px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .lecturer {
+            font-size: 1rem;
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        /* Question Banner */
+        .question-banner {
+            background: rgba(121, 40, 202, 0.15);
+            border-left: 4px solid var(--secondary-glow);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .question-title {
+            font-size: 1.3rem;
+            color: var(--text-heading);
+            font-weight: 700;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .question-topic {
+            font-style: italic;
+            color: #94A3B8;
+        }
+
+        /* Content Sections */
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-heading {
+            font-size: 1.25rem;
+            color: var(--accent-cyan);
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-heading::before {
+            content: "✦";
+            color: var(--accent-gold);
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #CBD5E1;
+            text-align: justify;
+        }
+
+        /* Bullet List */
+        .bullet-list {
+            list-style: none;
+        }
+
+        .bullet-list > li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 18px;
+            color: #CBD5E1;
+        }
+
+        .bullet-list > li::before {
+            content: "•";
+            position: absolute;
+            left: 10px;
+            top: -2px;
+            color: var(--secondary-glow);
+            font-size: 1.5rem;
+        }
+
+        .bullet-title {
+            color: var(--text-heading);
+            font-weight: 700;
+        }
+
+        /* Term Highlight */
+        .term {
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        /* Box highlight for root definitions or core concepts */
+        .highlight-card {
+            background: var(--highlight-box);
+            border: 1px solid rgba(0, 223, 216, 0.2);
+            border-radius: 12px;
+            padding: 18px 22px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .card {
+                padding: 25px 20px;
+            }
+            .main-title {
+                font-size: 1.6rem;
+            }
+            body {
+                padding: 15px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="stars-bg"></div>
+
+    <div class="container">
+        <div class="card">
+            <!-- Header -->
+            <header class="header">
+                <div class="sub-title">Đề cương ôn thi DN TH Ấn Độ CK4 v4 – tiengthanh 1</div>
+                <h1 class="main-title">DN TRIẾT HỌC ẤN ĐỘ<br>(BHĀRATASYA DARŚANA)</h1>
+                <div class="badge-official">ĐÁP ÁN CHÍNH THỨC 5 CÂU HỎI ÔN THI CUỐI KỲ</div>
+                <div class="lecturer">Giảng viên: TT Thích Giác Điều</div>
+            </header>
+
+            <!-- Question Info -->
+            <div class="question-banner">
+                <div class="question-title">CÂU 4: BẢN CHẤT, Ý NGHĨA THUẬT TỪ PURUṢĀRTHAS VÀ ỨNG DỤNG THỜI HIỆN ĐẠI</div>
+                <div class="question-topic">Nội dung đề bài: “Trình bày bản chất và ý nghĩa thuật từ Puruṣārthas; tại sao nói Puruṣārthas là nền tảng của triết lý nhân sinh Ấn Độ? (hoặc: Trình bày bản chất, ý nghĩa thuật từ Puruṣārthas và ứng dụng Puruṣārtha trong thời hiện đại như thế nào?)”</div>
+            </div>
+
+            <!-- Section 1 -->
+            <div class="section">
+                <h2 class="section-heading">1. Bản chất và ý nghĩa thuật từ Puruṣārthas</h2>
+                <div class="highlight-card">
+                    <p style="margin-bottom: 0;">
+                        Thuật từ <span class="term">Puruṣārtha</span> ghép bởi <span class="term">Puruṣa</span> (con người) và <span class="term">Artha</span> (mục đích, ý nghĩa), chỉ Bốn mục đích tối thượng của đời người:
+                    </p>
+                </div>
+                <ul class="bullet-list">
+                    <li>
+                        <span class="bullet-title">Artha (Của cải vật chất):</span> Sự tạo lập kinh tế, tài sản chính đáng để duy trì mạng sống, bảo đảm sự ổn định cho gia đình và phụng sự xã hội.
+                    </li>
+                    <li>
+                        <span class="bullet-title">Kāma (Dục lạc):</span> Nhu cầu thụ hưởng tình cảm, nghệ thuật, thẩm mỹ và sự an vui giác quan lành mạnh của con người.
+                    </li>
+                    <li>
+                        <span class="bullet-title">Dharma (Đạo đức / Bổn phận):</span> Nguyên tắc luân lý, công lý chỉ đạo hành vi. Dharma là nền tảng kiểm soát, điều chỉnh Artha và Kāma đi đúng quỹ đạo chân chính.
+                    </li>
+                    <li>
+                        <span class="bullet-title">Mokṣa (Giải thoát):</span> Cứu cánh tối thượng vượt thoát trói buộc luân hồi, chứng đạt an lạc và tự do tâm linh tuyệt đối.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="section">
+                <h2 class="section-heading">2. Vì sao Puruṣārthas là nền tảng của Triết lý Nhân sinh Ấn Độ?</h2>
+                <ul class="bullet-list">
+                    <li>
+                        <span class="bullet-title">Thiết lập sự cân bằng hoàn chỉnh:</span> Puruṣārthas dung hòa hài hòa giữa nhu cầu vật chất thế tục (<span class="term">Trivarga: Dharma, Artha, Kāma</span>) với khát vọng tâm linh siêu thế (<span class="term">Mokṣa</span>).
+                    </li>
+                    <li>
+                        <span class="bullet-title">Tránh các cực đoan:</span> Ngăn chặn chủ nghĩa khoái lạc buông thả (chỉ mưu cầu Artha - Kāma như phái <span class="term">Cārvāka</span>) lẫn thái độ yếm thế, khổ hạnh tiêu cực chối bỏ cuộc đời.
+                    </li>
+                    <li>
+                        <span class="bullet-title">Liên kết hữu cơ với Āśrama:</span> Lộ trình 4 giai đoạn đời người vận hành ăn khớp với 4 mục đích này để giúp con người hoàn thành trách nhiệm xã hội trước khi xuất gia giải thoát.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="section">
+                <h2 class="section-heading">3. Ứng dụng Puruṣārtha trong thời hiện đại</h2>
+                <ul class="bullet-list">
+                    <li>
+                        <span class="bullet-title">Trị liệu khủng hoảng hiện sinh:</span> Xã hội tiêu thụ đương đại tạo ra lòng tham vô đáy, biến con người thành nô lệ của tiền tài (<span class="term">Artha</span>) và nhục dục (<span class="term">Kāma</span>), dẫn tới căng thẳng, suy thoái đạo đức và cô đơn.
+                    </li>
+                    <li>
+                        <span class="bullet-title">Giải pháp cân bằng:</span> Đưa <span class="term">Dharma</span> trở lại làm "la bàn" đạo đức trong kinh tế và đời sống; đưa <span class="term">Mokṣa</span> thành phương châm nuôi dưỡng an lạc nội tâm thông qua thiền tập, chuyển hóa lòng tham sân si, thiết lập hòa bình cho cá nhân và xã hội.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tổng hợp Đề cương Ôn tập Triết học Ấn Độ</title>
+    <style>
+        :root {
+            --primary-glow: #7928CA;
+            --secondary-glow: #FF0080;
+            --accent-cyan: #00DFD8;
+            --accent-gold: #FFD700;
+            --text-main: #E2E8F0;
+            --text-heading: #FFFFFF;
+            --glass-bg: rgba(15, 23, 42, 0.65);
+            --glass-border: rgba(255, 255, 255, 0.12);
+            --highlight-box: rgba(0, 223, 216, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            background-color: #030712;
+            color: var(--text-main);
+            line-height: 1.75;
+            overflow-x: hidden;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        /* Cosmic Canvas & Nebulae Background */
+        .stars-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(121, 40, 202, 0.25) 0%, transparent 45%),
+                radial-gradient(circle at 80% 80%, rgba(255, 0, 128, 0.2) 0%, transparent 45%),
+                radial-gradient(circle at 50% 50%, rgba(0, 223, 216, 0.15) 0%, transparent 50%),
+                #030712;
+        }
+
+        /* Animated Star Particles */
+        .stars-bg::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 60px 100px, rgba(255,255,255,0.8), rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 110px 50px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 170px 150px, rgba(255,215,0,0.9), rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 250px 210px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 330px 270px, rgba(0,223,216,0.8), rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 390px 340px, #fff, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 400px 400px;
+            opacity: 0.6;
+            animation: twinkle 8s infinite linear;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.4; transform: translateY(0); }
+            50% { opacity: 0.8; }
+            100% { opacity: 0.4; transform: translateY(-20px); }
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        /* Glassmorphism Outer Card */
+        .card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5),
+                        0 0 30px rgba(121, 40, 202, 0.2);
+            margin-bottom: 30px;
+        }
+
+        /* Header Styling */
+        .header {
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 25px;
+            margin-bottom: 35px;
+        }
+
+        .sub-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-cyan);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .main-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FFFFFF 0%, #E2E8F0 50%, var(--accent-cyan) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .badge-official {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--primary-glow), var(--secondary-glow));
+            color: #FFF;
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 4px 16px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+
+        /* Question Block Styling */
+        .question-block {
+            background: rgba(15, 23, 42, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            padding: 28px;
+            margin-bottom: 35px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .question-banner {
+            background: rgba(121, 40, 202, 0.2);
+            border-left: 4px solid var(--secondary-glow);
+            padding: 16px 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
+
+        .question-title {
+            font-size: 1.25rem;
+            color: var(--text-heading);
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        /* Content Sections */
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section-heading {
+            font-size: 1.15rem;
+            color: var(--accent-cyan);
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-heading::before {
+            content: "✦";
+            color: var(--accent-gold);
+        }
+
+        p {
+            margin-bottom: 12px;
+            color: #CBD5E1;
+            text-align: justify;
+        }
+
+        /* Bullet List */
+        .bullet-list {
+            list-style: none;
+        }
+
+        .bullet-list > li {
+            position: relative;
+            padding-left: 26px;
+            margin-bottom: 14px;
+            color: #CBD5E1;
+        }
+
+        .bullet-list > li::before {
+            content: "•";
+            position: absolute;
+            left: 8px;
+            top: -2px;
+            color: var(--secondary-glow);
+            font-size: 1.4rem;
+        }
+
+        /* Numbered List */
+        .numbered-list {
+            list-style: none;
+            counter-reset: num-counter;
+        }
+
+        .numbered-list > li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 14px;
+            color: #CBD5E1;
+            counter-increment: num-counter;
+        }
+
+        .numbered-list > li::before {
+            content: counter(num-counter) ".";
+            position: absolute;
+            left: 4px;
+            top: 0;
+            color: var(--accent-gold);
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
+
+        /* Sub-bullet List */
+        .sub-bullet-list {
+            list-style: none;
+            margin-top: 8px;
+            margin-bottom: 8px;
+            padding-left: 10px;
+        }
+
+        .sub-bullet-list li {
+            position: relative;
+            padding-left: 22px;
+            margin-bottom: 8px;
+            color: #CBD5E1;
+        }
+
+        .sub-bullet-list li::before {
+            content: "▫";
+            position: absolute;
+            left: 4px;
+            color: var(--accent-cyan);
+            font-size: 1rem;
+        }
+
+        .bullet-title {
+            color: var(--text-heading);
+            font-weight: 700;
+        }
+
+        /* Term Highlight */
+        .term {
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        /* Highlight card */
+        .highlight-card {
+            background: var(--highlight-box);
+            border: 1px solid rgba(0, 223, 216, 0.2);
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin-top: 12px;
+            margin-bottom: 12px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .card {
+                padding: 25px 15px;
+            }
+            .question-block {
+                padding: 18px 14px;
+            }
+            .main-title {
+                font-size: 1.6rem;
+            }
+            body {
+                padding: 15px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="stars-bg"></div>
+
+    <div class="container">
+        <div class="card">
+            <!-- Main Header -->
+            <header class="header">
+                <div class="sub-title">Đề cương ôn thi DN TH ẤN ĐỘ CK4 v4 – tiengthanh 7 & 8</div>
+                <h1 class="main-title">ĐỀ CƯƠNG ÔN TẬP TỔNG HỢP<br>DN TRIẾT HỌC ẤN ĐỘ</h1>
+                <div class="badge-official">TỔNG HỢP 5 CÂU HỎI ÔN THI CUỐI KỲ</div>
+            </header>
+
+            <!-- CÂU 1 -->
+            <div class="question-block">
+                <div class="question-banner">
+                    <div class="question-title">CÂU 1: BẢN CHẤT VÀ TẦM QUAN TRỌNG CỦA TRIẾT LÝ NHÂN SINH ẤN ĐỘ</div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-heading">1. Đặt vấn đề và khởi điểm thực tiễn (Dùng làm Mở bài)</h2>
+                    <ul class="bullet-list">
+                        <li>
+                            <span class="bullet-title">Điểm xuất phát:</span> Khác với phương Tây khởi đi từ sự tò mò tri thức, Triết lý Nhân sinh Ấn Độ (<span class="term">Darśana</span>) khởi sinh trực tiếp từ hiện thực đau khổ (<span class="term">Duḥkha</span>).
+                        </li>
+                        <li>
+                            <span class="bullet-title">Khai triển:</span> Mọi hệ thống từ truyền thống Vệ-đà (<span class="term">Sāṁkhya, Yoga, Vedānta</span>) đến Sa-môn (<span class="term">Phật giáo, Kỳ Na giáo</span>) đều gặp nhau ở một điểm chung: xem triết học như một phương thuốc trị liệu nỗi khổ nhân sinh.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-heading">2. Bản chất của Triết lý Nhân sinh Ấn Độ (Phần Thân bài trọng tâm)</h2>
+                    <ul class="bullet-list">
+                        <li>
+                            <span class="bullet-title">Tính thực tiễn cứu khổ hướng đến Giải thoát:</span> Mục tiêu tối hậu không phải lý thuyết siêu hình mà là đoạn tận vô minh, vượt thoát sự trói buộc của luân hồi (<span class="term">Saṃsāra</span>) để đạt tự do tuyệt đối (<span class="term">Mokṣa, Kaivalya, Nirvāṇa</span>).
+                        </li>
+                        <li>
+                            <span class="bullet-title">Mô hình 4 mục đích đời người (Puruṣārtha):</span> Khai triển đủ 4 yếu tố: <span class="term">Artha</span> (kinh tế), <span class="term">Kāma</span> (dục lạc), <span class="term">Dharma</span> (đạo đức), và <span class="term">Mokṣa</span> (giải thoát). Phân tích phái duy vật <span class="term">Cārvāka</span> chỉ dừng ở Artha và Kāma, trong khi các phái khác lấy Dharma làm kim chỉ nam.
+                        </li>
+                        <li>
+                            <span class="bullet-title">Lộ trình 4 giai đoạn (Āśramadharma):</span> Phân tích sự tuần tự để kéo dài bài viết: Phạm hạnh kỳ (<span class="term">Brahmacarya</span>), Gia trú kỳ (<span class="term">Gṛhastha</span>), Lâm thế kỳ (<span class="term">Vānaprastha</span>), Độn thế kỳ (<span class="term">Saṃnyāsa</span>).
+                        </li>
+                        <li>
+                            <span class="bullet-title">Thống nhất Tri và Hành:</span> Khẳng định chân lý đòi hỏi thực nghiệm thiền định (<span class="term">Yoga, Dhyāna</span>).
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-heading">3. Tầm quan trọng và ý nghĩa (Dùng làm Kết luận mở rộng)</h2>
+                    <ul class="bullet-list">
+                        <li>
+                            <span class="bullet-title">Định hình văn minh:</span> Là trục xương sống của đạo đức, dùng luật nghiệp báo (<span class="term">Karma</span>) để tránh 2 cực đoan: khoái lạc buông thả và khổ hạnh ép xác.
+                        </li>
+                        <li>
+                            <span class="bullet-title">Trị liệu hiện đại:</span> Khôi phục <span class="term">Dharma</span> để kiểm soát lòng tham, lấy <span class="term">Mokṣa</span> làm cứu cánh an lạc.
+                        </li>
+                        <li>
+                            <span class="bullet-title">Soi chiếu Phật giáo:</span> Đức Phật gạt bỏ nghi lễ hiến tế, chỉ ra Bát Chánh Đạo để chứng Niết-bàn.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CÂU 2 -->
+            <div class="question-block">
+                <div class="question-banner">
+                    <div class="question-title">CÂU 2: LỊCH TRÌNH TIẾN HÓA CỦA SĀṀKHYA VÀ QUAN HỆ PRAKṚTI – PURUṢA</div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-heading">1. Bản chất hệ thống Nhị nguyên vô thần</h2>
+                    <p>
+                        Hai thực tại tối sơ: <span class="term">Prakṛti</span> (Tự tánh/Vật chất - phi sở tạo, năng tạo, vô thức, năng động) và <span class="term">Puruṣa</span> (Thần ngã/Tinh thần - phi sở tạo, phi năng tạo, hữu thức, bất biến). Khẳng định học phái không chấp nhận Đấng sáng tạo (<span class="term">Īśvara</span>).
+                    </p>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-heading">2. Lịch trình tiến hóa 25 Đế (Tattva)</h2>
+                    <ul class="bullet-list">
+                        <li>
+                            <span class="bullet-title">Khởi thủy:</span> Giao thoa làm mất cân bằng Tam đức (<span class="term">Triguṇa: Sattva, Rajas, Tamas</span>).
+                        </li>
+                        <li>
+                            <span class="bullet-title">Bước 1:</span> Sinh ra <span class="term">Mahat / Buddhi</span> (Trí năng).
+                        </li>
+                        <li>
+                            <span class="bullet-title">Bước 2:</span> Sinh ra <span class="term">Ahaṁkāra</span> (Ngã ái).
+                        </li>
+                        <li>
+                            <span class="bullet-title">Bước 3 (Khai triển sâu 3 thuộc tính của Ahaṁkāra):</span>
+                            <ul class="sub-bullet-list">
+                                <li>
+                                    <span class="bullet-title">Sāttvika Ahaṁkāra (Thuần chất):</span> Sinh ra <span class="term">Manas</span> (Ý căn), 5 Tri căn, 5 Tác căn.
+                                </li>
+                                <li>
+                                    <span class="bullet-title">Tāmasa Ahaṁkāra (Ám chất):</span> Sinh ra Ngũ duy (<span class="term">Tanmātra</span>) &rarr; ngưng tụ thành Ngũ đại chủng (<span class="term">Mahābhūta</span>).
+                                </li>
+                                <li>
+                                    <span class="bullet-title">Rājasa Ahaṁkāra (Kích chất):</span> Không sinh Đế mới, đóng vai trò năng lượng kích thích (<span class="term">Upaṣṭambhaka</span>) để biến Sāttvika và Tāmasa thành hiện tượng giới.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="bullet-title">Hệ thống Nội quan (Antaḥkaraṇa):</span> Kết hợp <span class="term">Buddhi + Ahaṁkāra + Manas</span>.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-heading">3. Quan hệ Prakṛti – Puruṣa trong tiến trình giải thoát</h2>
+                    <ul class="bullet-list">
+                        <li>
+                            <span class="bullet-title">Hai ẩn dụ kinh điển:</span> Người mù và Người què (Kārikā 21) cõng nhau qua rừng Tam đức; Vũ công và Khán giả (Kārikā 59, 61).
+                        </li>
+                        <li>
+                            <span class="bullet-title">Giải thoát:</span> Trạng thái Độc tồn (<span class="term">Kaivalya</span>) đạt được nhờ Trí năng phân biệt (<span class="term">Viveka-jñāna</span>).
+                        </li>
+                        <li>
+                            <span class="bullet-title">Bản chất tối hậu (Kārikā 62):</span> <span class="term">Puruṣa</span> chưa từng bị trói buộc, chính <span class="term">Prakṛti</span> tự trói và tự cởi trói.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CÂU 3 -->
+            <div class="question-block">
+                <div class="question-banner">
+                    <div class="question-title">CÂU 3: HỌC THUYẾT DHAMMA THEO VEDA VÀ SA-MÔN HẠNH</div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-heading">1. Định nghĩa chung</h2>
+                    <p>
+                        Phân tích từ nguyên: Căn ngữ <span class="term">√dhṛ</span> (duy trì, nâng đỡ trật tự vũ trụ, công lý).
+                    </p>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-heading">2. Dharma theo Truyền thống Vệ-đà (Veda)</h2>
+                    <ul class="bullet-list">
+                        <li>
+                            <span class="bullet-title">Trật tự vũ trụ (Ṛta):</span> Gắn với nghi lễ hiến tế.
+                        </li>
+                        <li>
+                            <span class="bullet-title">Varṇadharma (Bổn phận 4 giai cấp):</span> Bà-la-môn, Sát-đế-lị, Phệ-xá, Thủ-đà-la.
+                        </li>
+                        <li>
+                            <span class="bullet-title">Āśramadharma:</span> Nêu lại 4 giai đoạn đời người.
+                        </li>
+                        <li>
+                            <span class="bullet-title">Sādhāraṇadharma (Đạo đức phổ quát):</span> 10 phẩm hạnh, nhấn mạnh <span class="term">Ahiṁsā</span> (bất hại), <span class="term">Satya</span> (chân thật), <span class="term">Asteya</span> (không trộm cắp).
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-heading">3. Dharma theo Truyền thống Sa-môn (Śramaṇa)</h2>
+                    <p>
+                        <span class="bullet-title">Bối cảnh:</span> Phong trào xuất thế phản đối đặc quyền giai cấp và hiến tế sát sinh.
+                    </p>
+                    <ul class="bullet-list">
+                        <li>
+                            <span class="bullet-title">Kỳ Na giáo (Jaina Dharma):</span> Phân chia thành <span class="term">Pravṛtti-dharma</span> (tạo phước) và <span class="term">Nivṛtti-dharma</span> (hướng giải thoát). Thực hành 5 đại thệ nguyện (<span class="term">Mahāvrata</span>), khổ hạnh ép xác (<span class="term">Tapas</span>). Về bản thể học: <span class="term">Dharma</span> (vận động) đối lập <span class="term">Adharma</span> (tĩnh lặng).
+                        </li>
+                        <li>
+                            <span class="bullet-title">Phật giáo (Buddha Dhamma):</span> Chánh pháp là Lời Phật dạy (<span class="term">Buddhavacana</span>), Pháp & Luật (<span class="term">Dhamma-Vinaya</span>). Vận hành theo Duyên khởi (<span class="term">Paṭiccasamupāda</span>), Vô thường (<span class="term">Anicca</span>), Vô ngã (<span class="term">Anattā</span>). Thực nghiệm qua Giới - Định - Tuệ.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CÂU 4 -->
+            <div class="question-block">
+                <div class="question-banner">
+                    <div class="question-title">CÂU 4: BẢN CHẤT, Ý NGHĨA PURUṢĀRTHAS VÀ ỨNG DỤNG</div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-heading">1. Bản chất và ý nghĩa</h2>
+                    <p>
+                        <span class="bullet-title">Từ nguyên:</span> Phân tích <span class="term">Puruṣa</span> (con người) + <span class="term">Artha</span> (mục đích).
+                    </p>
+                    <ul class="bullet-list">
+                        <li>
+                            <span class="bullet-title">Artha:</span> Tài sản, kinh tế chính đáng.
+                        </li>
+                        <li>
+                            <span class="bullet-title">Kāma:</span> Dục lạc nghệ thuật, thẩm mỹ, giác quan lành mạnh.
+                        </li>
+                        <li>
+                            <span class="bullet-title">Dharma:</span> Luân lý chỉ đạo.
+                        </li>
+                        <li>
+                            <span class="bullet-title">Mokṣa:</span> Giải thoát tâm linh.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-heading">2. Vì sao là nền tảng?</h2>
+                    <ul class="bullet-list">
+                        <li>
+                            <span class="bullet-title">Sự dung hòa:</span> Cân bằng giữa thế tục (<span class="term">Trivarga: Dharma, Artha, Kāma</span>) và siêu thế (<span class="term">Mokṣa</span>).
+                        </li>
+                        <li>
+                            <span class="bullet-title">Tránh thái cực:</span> Ngăn chặn yếm thế tiêu cực hoặc khoái lạc buông thả (nhắc lại phái <span class="term">Cārvāka</span>).
+                        </li>
+                        <li>
+                            <span class="bullet-title">Sự ăn khớp:</span> Liên kết chặt chẽ với hệ thống <span class="term">Āśrama</span> (4 giai đoạn đời người).
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-heading">3. Ứng dụng hiện đại</h2>
+                    <ul class="bullet-list">
+                        <li>
+                            <span class="bullet-title">Trị liệu:</span> Phân tích thực trạng xã hội tiêu thụ biến con người thành nô lệ của Artha và Kāma.
+                        </li>
+                        <li>
+                            <span class="bullet-title">Giải pháp:</span> Đưa <span class="term">Dharma</span> làm la bàn kinh tế, <span class="term">Mokṣa</span> làm phương châm thiền tập, chuyển hóa tham sân si.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CÂU 5 -->
+            <div class="question-block">
+                <div class="question-banner">
+                    <div class="question-title">CÂU 5: HỌC THUYẾT PADĀRTHA VÀ PHẠM TRÙ VÔ THỂ (ABHĀVA)</div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-heading">1. Khái quát hệ thống Nyāya – Vaiśeṣika</h2>
+                    <p>
+                        Học phái do <span class="term">Kaṇāda</span> sáng lập, là hệ thống Đa nguyên thực tại luận. Giải thoát (<span class="term">Mokṣa / Niḥśreyasa</span>) đạt được nhờ liễu tri như thật các phạm trù.
+                    </p>
+                    <div class="highlight-card">
+                        <p style="margin-bottom: 0;">
+                            <span class="bullet-title">Từ nguyên Padārtha:</span> <span class="term">Pada</span> (từ ngữ / dấu chân) + <span class="term">Artha</span> (thực tại / đối tượng). Trích dẫn câu: <em>"Muốn tìm con voi phải nhìn xuống dấu chân voi"</em>.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-heading">2. Bảy Cứu nghĩa (Padārtha)</h2>
+                    <ol class="numbered-list">
+                        <li>
+                            <span class="bullet-title">Dravya (Thực thể):</span> Bản thể sở y. Gồm 9 loại: Đất, Nước, Lửa, Gió, Không gian (<span class="term">Ākāśa</span>), Thời gian (<span class="term">Kāla</span>), Phương hướng (<span class="term">Diś</span>), Ngã (<span class="term">Ātman</span>), Ý (<span class="term">Manas</span>).
+                        </li>
+                        <li>
+                            <span class="bullet-title">Guṇa (Đức / Phẩm tính):</span> 24 thuộc tính.
+                        </li>
+                        <li>
+                            <span class="bullet-title">Karma (Nghiệp / Vận động):</span> 5 chuyển động.
+                        </li>
+                        <li>
+                            <span class="bullet-title">Sāmānya (Đồng / Tổng tướng).</span>
+                        </li>
+                        <li>
+                            <span class="bullet-title">Viśeṣa (Dị / Biệt tướng):</span> Phái sinh từ căn <span class="term">√śiṣ</span>, tạo nên tên gọi Vaiśeṣika.
+                        </li>
+                        <li>
+                            <span class="bullet-title">Samavāya (Hòa hiệp / Nội tại):</span> Khác biệt với <span class="term">Saṁyoga</span> (kết hợp ngoại tại).
+                        </li>
+                        <li>
+                            <span class="bullet-title">Abhāva (Vô thể / Vô thuyết).</span>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-heading">3. Phân tích Vô thể (Abhāva) và Ứng dụng tu tập</h2>
+                    <ul class="bullet-list">
+                        <li>
+                            <span class="bullet-title">Hệ thống phân loại:</span>
+                            <ul class="sub-bullet-list">
+                                <li>
+                                    <span class="bullet-title">Anyonyābhāva (Vô thể tương đãi):</span> Phủ định tính đồng nhất ("cái bình không phải tấm vải").
+                                </li>
+                                <li>
+                                    <span class="bullet-title">Saṁsargābhāva (Vô thể liên hệ):</span> Gồm 3 dạng:
+                                    <ul class="sub-bullet-list" style="padding-left: 10px;">
+                                        <li><span class="term">Prāgabhāva (Tiền vô):</span> Quả chưa có trong nhân &rarr; Biện minh cho Bất hữu quả luận (<span class="term">Asatkāryavāda</span>).</li>
+                                        <li><span class="term">Pradhvaṁsābhāva (Hậu vô):</span> Không tồn tại sau khi bị phá hủy (chén bể).</li>
+                                        <li><span class="term">Atyantābhāva (Tuyệt đối vô):</span> Phủ định ở cả 3 thời (lông rùa, sừng thỏ).</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="bullet-title">Ứng dụng tu tập:</span> Ứng dụng vào đạo đức học để thiết lập sự vắng mặt của tham-sân-si. Đối chiếu Kinh Tất Cả Lậu Hoặc (<span class="term">Sabbāsava Sutta</span>) qua phương pháp Tránh né (<span class="term">Parivajjana</span>), chủ động rời khỏi cảnh duyên bất thiện để bảo hộ tâm thức.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

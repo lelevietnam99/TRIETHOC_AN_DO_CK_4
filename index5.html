@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đề cương Ôn thi Triết học Ấn Độ - Câu 5</title>
+    <style>
+        :root {
+            --primary-glow: #7928CA;
+            --secondary-glow: #FF0080;
+            --accent-cyan: #00DFD8;
+            --accent-gold: #FFD700;
+            --text-main: #E2E8F0;
+            --text-heading: #FFFFFF;
+            --glass-bg: rgba(15, 23, 42, 0.65);
+            --glass-border: rgba(255, 255, 255, 0.12);
+            --highlight-box: rgba(0, 223, 216, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            background-color: #030712;
+            color: var(--text-main);
+            line-height: 1.75;
+            overflow-x: hidden;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        /* Cosmic Canvas & Nebulae Background */
+        .stars-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 18% 25%, rgba(121, 40, 202, 0.25) 0%, transparent 45%),
+                radial-gradient(circle at 82% 75%, rgba(255, 0, 128, 0.2) 0%, transparent 45%),
+                radial-gradient(circle at 50% 45%, rgba(0, 223, 216, 0.15) 0%, transparent 50%),
+                #030712;
+        }
+
+        /* Animated Star Particles */
+        .stars-bg::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 25px 35px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 55px 95px, rgba(255,255,255,0.8), rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 125px 55px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 185px 145px, rgba(255,215,0,0.9), rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 265px 205px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 345px 265px, rgba(0,223,216,0.8), rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 405px 335px, #fff, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 400px 400px;
+            opacity: 0.6;
+            animation: twinkle 8s infinite linear;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.4; transform: translateY(0); }
+            50% { opacity: 0.8; }
+            100% { opacity: 0.4; transform: translateY(-20px); }
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 920px;
+            margin: 0 auto;
+        }
+
+        /* Glassmorphism Card */
+        .card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5),
+                        0 0 30px rgba(121, 40, 202, 0.2);
+            margin-bottom: 30px;
+        }
+
+        /* Header Styling */
+        .header {
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 25px;
+            margin-bottom: 30px;
+        }
+
+        .sub-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-cyan);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .main-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FFFFFF 0%, #E2E8F0 50%, var(--accent-cyan) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .badge-official {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--primary-glow), var(--secondary-glow));
+            color: #FFF;
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 4px 16px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .lecturer {
+            font-size: 1rem;
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        /* Question Banner */
+        .question-banner {
+            background: rgba(121, 40, 202, 0.15);
+            border-left: 4px solid var(--secondary-glow);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .question-title {
+            font-size: 1.3rem;
+            color: var(--text-heading);
+            font-weight: 700;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .question-topic {
+            font-style: italic;
+            color: #94A3B8;
+        }
+
+        /* Content Sections */
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-heading {
+            font-size: 1.25rem;
+            color: var(--accent-cyan);
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-heading::before {
+            content: "✦";
+            color: var(--accent-gold);
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #CBD5E1;
+            text-align: justify;
+        }
+
+        /* Bullet List */
+        .bullet-list {
+            list-style: none;
+        }
+
+        .bullet-list > li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 18px;
+            color: #CBD5E1;
+        }
+
+        .bullet-list > li::before {
+            content: "•";
+            position: absolute;
+            left: 10px;
+            top: -2px;
+            color: var(--secondary-glow);
+            font-size: 1.5rem;
+        }
+
+        /* Numbered List */
+        .numbered-list {
+            list-style: none;
+            counter-reset: num-counter;
+        }
+
+        .numbered-list > li {
+            position: relative;
+            padding-left: 32px;
+            margin-bottom: 18px;
+            color: #CBD5E1;
+            counter-increment: num-counter;
+        }
+
+        .numbered-list > li::before {
+            content: counter(num-counter) ".";
+            position: absolute;
+            left: 5px;
+            top: 0;
+            color: var(--accent-gold);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        /* Sub-bullet List */
+        .sub-bullet-list {
+            list-style: none;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding-left: 10px;
+        }
+
+        .sub-bullet-list li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 10px;
+            color: #CBD5E1;
+        }
+
+        .sub-bullet-list li::before {
+            content: "▫";
+            position: absolute;
+            left: 5px;
+            color: var(--accent-cyan);
+            font-size: 1.1rem;
+        }
+
+        .bullet-title {
+            color: var(--text-heading);
+            font-weight: 700;
+        }
+
+        /* Term Highlight */
+        .term {
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        /* Box highlight */
+        .highlight-card {
+            background: var(--highlight-box);
+            border: 1px solid rgba(0, 223, 216, 0.2);
+            border-radius: 12px;
+            padding: 18px 22px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .card {
+                padding: 25px 20px;
+            }
+            .main-title {
+                font-size: 1.6rem;
+            }
+            body {
+                padding: 15px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="stars-bg"></div>
+
+    <div class="container">
+        <div class="card">
+            <!-- Header -->
+            <header class="header">
+                <div class="sub-title">Đề cương ôn thi DN TH Ấn Độ CK4 v4 – tiengthanh 6</div>
+                <h1 class="main-title">DN TRIẾT HỌC ẤN ĐỘ<br>(BHĀRATASYA DARŚANA)</h1>
+                <div class="badge-official">ĐÁP ÁN CHÍNH THỨC 5 CÂU HỎI ÔN THI CUỐI KỲ</div>
+                <div class="lecturer">Giảng viên: TT Thích Giác Điều</div>
+            </header>
+
+            <!-- Question Info -->
+            <div class="question-banner">
+                <div class="question-title">CÂU 5: HỌC THUYẾT PADĀRTHA CỦA NYĀYA – VAIŚEṢIKA VÀ PHÂN TÍCH PHẠM TRÙ VÔ THỂ (ABHĀVA)</div>
+                <div class="question-topic">Nội dung đề bài: “Trình bày học thuyết Padārtha của học phái Nyāya – Vaiśeṣika (Phân tích 7 phạm trù, 9 thực thể, trọng tâm phạm trù Vô thể Abhāva và ứng dụng tu tập đoạn trừ phiền não).”</div>
+            </div>
+
+            <!-- Section 1 -->
+            <div class="section">
+                <h2 class="section-heading">1. Khái quát về hệ thống Nyāya – Vaiśeṣika</h2>
+                <p>
+                    <span class="term">Vaiśeṣika</span> do <span class="term">Kaṇāda</span> sáng lập, là hệ thống Đa nguyên thực tại luận theo chiều ngang. Trong khi <span class="term">Nyāya</span> chuyên sâu về Nhận thức luận thì <span class="term">Vaiśeṣika</span> đặt nền tảng Bản thể luận. Học phái chủ trương giải thoát (<span class="term">Mokṣa / Niḥśreyasa</span>) đạt được nhờ liễu tri như thật về các phạm trù thực tại (<span class="term">Padārtha</span>).
+                </p>
+                
+                <div class="highlight-card">
+                    <p style="margin-bottom: 0;">
+                        <span class="bullet-title">Ý nghĩa thuật từ:</span> <span class="term">Padārtha</span> gồm <span class="term">Pada</span> (từ ngữ / dấu chân) và <span class="term">Artha</span> (thực tại / đối tượng). Giống như câu cách ngôn: <em>"Muốn tìm con voi phải nhìn xuống dấu chân voi"</em>, muốn đạt giải thoát phải thấu triệt các phạm trù cấu thành thế giới.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="section">
+                <h2 class="section-heading">2. Bảy Cứu nghĩa (Padārtha - Các phạm trù thực tại)</h2>
+                <ol class="numbered-list">
+                    <li>
+                        <span class="bullet-title">Dravya (Thực thể):</span> Bản thể sở y cho thuộc tính và vận động, gồm <span class="term">9 thực thể</span>: Đất, Nước, Lửa, Gió (4 cực vi), Không gian (<span class="term">Ākāśa</span>), Thời gian (<span class="term">Kāla</span>), Phương hướng (<span class="term">Diś</span>), Ngã (<span class="term">Ātman</span>), và Ý (<span class="term">Manas</span>).
+                    </li>
+                    <li>
+                        <span class="bullet-title">Guṇa (Đức / Phẩm tính):</span> Thuộc tính tĩnh trú trong thực thể. Khởi thủy Kaṇāda nêu 17 thuộc tính; về sau Praśastapāda bổ sung thêm 7 thuộc tính (Trọng thể, Dịch thể, Nhuận, Hành, Dharma, Adharma, Thanh) hoàn thiện thành <span class="term">24 phẩm tính</span>.
+                    </li>
+                    <li>
+                        <span class="bullet-title">Karma (Nghiệp / Vận động):</span> 5 chuyển động cơ học vật lý: hướng thượng (nâng lên), hướng hạ (hạ xuống), quy tâm (co lại), ly tâm (dãn ra), và chuyển động tiến hành.
+                    </li>
+                    <li>
+                        <span class="bullet-title">Sāmānya (Đồng / Tổng tướng):</span> Tính phổ biến, đồng nhất của một chủng loại (yếu tính thường hằng chung cho loài bò).
+                    </li>
+                    <li>
+                        <span class="bullet-title">Viśeṣa (Dị / Biệt tướng):</span> Thuộc tính cá biệt khu biệt của từng cực vi. Thuật từ phái sinh từ căn <span class="term">√śiṣ</span>; chính nhờ phát hiện phạm trù này mà học phái mang tên Vaiśeṣika.
+                    </li>
+                    <li>
+                        <span class="bullet-title">Samavāya (Hòa hiệp / Nội tại):</span> Mối quan hệ gắn kết bất khả phân ly (như hoa và màu sắc của hoa, kết quả và nguyên nhân), xuất hiện như MỘT. Điều này đối lập với <span class="term">Saṁyoga</span> (kết hợp ngoại tại, có thể tách rời như người và cây gậy).
+                    </li>
+                    <li>
+                        <span class="bullet-title">Abhāva (Vô thể / Vô thuyết):</span> Sự vắng mặt hay phi tồn tại của một đối tượng.
+                    </li>
+                </ol>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="section">
+                <h2 class="section-heading">3. Phân tích Phạm trù Vô thể (Abhāva) và Ứng dụng Tu tập</h2>
+                <ul class="bullet-list">
+                    <li>
+                        <span class="bullet-title">Hệ thống phân loại Abhāva (Theo 2 hệ thống lớn):</span>
+                        <ul class="sub-bullet-list">
+                            <li>
+                                <span class="bullet-title">Anyonyābhāva (Vô thể tương đãi):</span> Sự phủ định tính đồng nhất giữa hai vật sai biệt ("cái bình không phải là tấm vải"); mang tính chất thường hằng, vô thủy vô chung.
+                            </li>
+                            <li>
+                                <span class="bullet-title">Saṁsargābhāva (Vô thể liên hệ):</span> Gồm 3 dạng cụ thể:
+                                <ul class="sub-bullet-list" style="padding-left: 10px;">
+                                    <li>
+                                        <span class="term">Prāgabhāva (Tiền vô):</span> Quả chưa có trong nhân trước khi sản sinh (vải chưa có trong chỉ); vô thủy nhưng hữu chung (chấm dứt khi quả xuất hiện, biện minh cho học thuyết <span class="term">Asatkāryavāda</span> - Bất hữu quả luận).
+                                    </li>
+                                    <li>
+                                        <span class="term">Pradhvaṁsābhāva (Hậu vô):</span> Sự không tồn tại của vật sau khi bị phá hủy (chén bị bể); hữu thủy nhưng vô chung (không bao giờ vật cũ tái sinh).
+                                    </li>
+                                    <li>
+                                        <span class="term">Atyantābhāva (Tuyệt đối vô):</span> Sự phủ định tuyệt đối ở cả ba thời (lông rùa, sừng thỏ); vô thủy vô chung.
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="bullet-title">Ứng dụng Tu tập theo lời Giáo thọ:</span>
+                        <ul class="sub-bullet-list">
+                            <li>
+                                Vô thể trong đạo đức học là chủ động thiết lập trạng thái vắng mặt hoàn toàn (<span class="term">Abhāva</span>) của khổ đau và phiền não tham, sân, si.
+                            </li>
+                            <li>
+                                Đối chiếu Kinh Tất Cả Lậu Hoặc (<span class="term">Sabbāsava Sutta</span>): Ứng dụng phương pháp Tránh né (<span class="term">Parivajjana</span>). Khi gặp đối tượng hay cảnh duyên gây sân hận, bực bội, hành giả chủ động tránh né đi nơi khác, thiết lập sự vắng mặt (<span class="term">Abhāva</span>) của hoàn cảnh bất thiện đó để bảo hộ tâm thức an lành.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
